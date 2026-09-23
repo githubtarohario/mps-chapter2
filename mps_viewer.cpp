@@ -1107,7 +1107,7 @@ static void OnResize(void)
                            スクリーンショット用に false で呼ぶと
                            裏画面に描くだけで表示しない。
   【戻り値】なし (void)
-  【呼び出し元】MainLoop(), SaveScreenshotMode()
+  【呼び出し元】MainLoop(), main() (-shot 指定時)
 =====================================================================*/
 static void RenderFrame(bool present)
 {
@@ -1229,7 +1229,7 @@ static void RenderFrame(bool present)
 
   【引数】  const char* path : 保存先のファイルパス
   【戻り値】bool : 保存できたら true
-  【呼び出し元】WndProc() (F12 キー), SaveScreenshotMode()
+  【呼び出し元】WndProc() (F12 キー), main() (-shot 指定時)
 =====================================================================*/
 static bool SaveBackBufferAsBMP(const char* path)
 {
@@ -1316,7 +1316,7 @@ static bool SaveBackBufferAsBMP(const char* path)
             画面に文字を描く代わりの簡易的な情報表示。
   【引数】  なし (void)
   【戻り値】なし (void)
-  【呼び出し元】MainLoop()  (約 0.1 秒ごと)
+  【呼び出し元】main() (起動時), MainLoop()  (約 0.1 秒ごと)
 =====================================================================*/
 static void UpdateWindowTitle(void)
 {
