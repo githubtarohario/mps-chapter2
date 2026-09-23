@@ -1,0 +1,21 @@
+# ---- ビルド生成物 ----
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+
+# ---- 計算結果 ----
+# mps.exe は 1 回の実行で 100 MB を超えるデータを書き出すので追跡しない
+output_*.prof
+particle_*.vtu
+shot_*.bmp
+
+# ---- PDF 変換の中間ファイル ----
+# make_pdf.bat が毎回上書きする作業用ファイル
+pdf_tools/_work.*
+
+# ---- その他 ----
+# 会話ログのエクスポート
+*-mpscvc.txt
