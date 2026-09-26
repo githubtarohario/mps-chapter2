@@ -6,6 +6,11 @@
 *.exp
 *.lib
 
+# ---- Visual Studio プロジェクト (vs/) ----
+vs/build/
+.vs/
+*.vcxproj.user
+
 # ---- 計算結果 ----
 # mps.exe は 1 回の実行で 100 MB を超えるデータを書き出すので追跡しない
 output_*.prof

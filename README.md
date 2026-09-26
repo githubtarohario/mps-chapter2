@@ -26,6 +26,7 @@
 | `mps.c` | MPS法ソルバ（C）。全関数・全変数に日本語の詳細コメント付き |
 | `mps_viewer.cpp` | DirectX 11 ビューア（C++） |
 | `build.bat` | 上の 2 つを一括ビルド（Visual Studio を自動検出） |
+| `vs/mps.sln` | `mps.c` 用の Visual Studio ソリューション（IDE でビルド・実行・デバッグ） |
 | `技術解説書.pdf` | 理論・実装・操作方法の解説（27ページ） |
 | `技術解説書.md` | 上の PDF のソース |
 | `make_pdf.bat` | `技術解説書.md` から PDF を作り直す |
@@ -67,6 +68,21 @@ mps_viewer.exe     アニメーション再生
 
 `mps_viewer.exe` は同じフォルダの `.prof` を全部読み込んで再生する。
 別のフォルダを見せたいときは引数で渡す：`mps_viewer.exe D:\結果フォルダ`
+
+### Visual Studio のプロジェクトで実行する
+
+`build.bat` の代わりに、Visual Studio の IDE で `mps.c` をビルド・実行・デバッグできる。
+
+1. `vs\mps.sln` をダブルクリックして Visual Studio で開く
+2. 上部の構成を **Release / x64** にする（Debug は計算がかなり遅い）
+3. **Ctrl + F5**（デバッグなしで開始）で実行する
+   - F5 だと、計算が終わった瞬間にコンソール画面が閉じてしまう
+
+- 作業フォルダは `Chapter2\`（`mps.c` と同じ場所）に設定してあるので、
+  計算結果はそこに書き出され、そのまま `mps_viewer.exe` で再生できる
+- 実行ファイルと中間ファイルは `vs\build\` 以下に作られる（Git では追跡しない）
+- プロジェクトは Visual Studio 2026（ツールセット v145）用。古い Visual Studio で
+  開くと「ソリューション操作の再ターゲット」を聞かれるので、そのまま OK すればよい
 
 ### ビューアの操作
 
